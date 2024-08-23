@@ -42,6 +42,8 @@ $texts = [
 ];
 foreach($texts AS $text) {
 $text = preg_match('/[A-Za-z\d]+\@[A-Za-z\d]+/', $text, $matches);
+//$text = preg_match('/[^\s]+\@[^\s]+/', $text, $matches)
+//$text = preg_match('/\S+\@\S+\.\S+/', $text, $matches)
 var_dump($matches);
 }
 
