@@ -67,6 +67,7 @@ $text = "Hallo, das hier ist ein Link zu Google: https://google.com.\n" .
   "Und das hier ist ein Link zu Facebook: https://facebook.com";
 
 $text = preg_replace('/https:\/\/(.+)\.com/', '/<a href= \'https://$1.com\'>https://$1.com</a>/', $text);
+//$text = preg_replace('/(https?.*\.[a-zA-Z]+)/', '<a href=$1>$1</a>', $text);
 var_dump($text);
 
 echo "-------\nAufgabe 4:\n";
@@ -103,8 +104,8 @@ $emails = [
     "welt@gmail.com"
 ];
 
-foreach($emails AS $email) {
-    $email = preg_replace('/\@googlemail.com/', '@gmail.com', $email);
-    $email = preg_replace('/(\+.+)\@gmail.com/', '@gmail.com', $email);
+foreach($emails AS &$email) {
+    $email = preg_replace('/\@googlemail\.com$/', '@gmail.com', $email);
+    $email = preg_replace('/(\+.+)\@gmail\.com/', '@gmail.com', $email);
     var_dump($email);
 }
